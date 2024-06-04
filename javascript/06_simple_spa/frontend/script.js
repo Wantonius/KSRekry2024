@@ -72,8 +72,43 @@ createForm = () => {
 	form.append(firstNameLabel,firstNameInput,lastNameLabel,lastNameInput,emailLabel,emailInput,phoneLabel,phoneInput,submitButton);
 	form.addEventListener("submit",function(event) {
 		event.preventDefault();
+		addContact();
 	})
 	
 	container.appendChild(form);
 	root.appendChild(container);
+}
+
+
+addContact = () => {
+	const firstNameInput = document.getElementById("firstname");
+	const lastNameInput = document.getElementById("lastname");
+	const emailInput = document.getElementById("email");
+	const phoneInput = document.getElementById("phone");
+	let contact = {
+		"firstname":firstNameInput.value,
+		"lastname":lastNameInput.value,
+		"email":emailInput.value,
+		"phone":phoneInput.value
+	}
+	if(mode) {
+		contact.id = mode;
+		for(let i=0;i<database.length;i++) {
+			if(contact.id === database[i].id) {
+				database.splice(i,1,contact);
+			}
+		}
+	} else {
+		contact.id = id;
+		id++;
+		database.push(contact);
+	}
+	firstNameInput.value = "";
+	lastNameInput.value = "";
+	emailInput.value = "";
+	phoneInput.value = "";
+	const submitButton = document.getElementById("submitbutton");
+	submitButton.value = "Add new contact";
+	mode = 0;
+	console.log(database);
 }
