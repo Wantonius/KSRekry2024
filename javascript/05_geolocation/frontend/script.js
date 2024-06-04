@@ -12,7 +12,7 @@ function findMe() {
 		
 		status.textContent = "";
 		
-		mapLink.href="https://www.openstreetmap.org/#map-18/"+latitude+"/"+longitude;
+		mapLink.href="https://www.openstreetmap.org/#map=18/"+latitude+"/"+longitude;
 		mapLink.textContent = "Your location";
 	}
 	
