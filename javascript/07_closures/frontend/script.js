@@ -26,3 +26,42 @@ const changeFontSize = function() {
 		}
 	}
 }
+
+const makeCounter = function(initialValue = 0) {
+	
+	let privateCounter = initialValue;
+	
+	function changeBy(val) {
+		privateCounter += val;
+	}
+	return {
+		increment:function() {
+			changeBy(1);
+		},
+		decrement:function() {
+			changeBy(-1);
+		},
+		value:function() {
+			return privateCounter;
+		}
+	}
+}
+
+function start() {
+	const counter1 = makeCounter(3);
+	const counter2 = makeCounter();
+	
+	console.log("Counter 1 value",counter1.value());
+	console.log("Counter 2 value",counter2.value());
+	
+	counter1.decrement();
+	counter1.decrement();
+	counter1.decrement();
+
+	counter2.increment();
+	counter2.increment();
+	counter2.increment();
+
+	console.log("Counter 1 value",counter1.value());
+	console.log("Counter 2 value",counter2.value());	
+}
