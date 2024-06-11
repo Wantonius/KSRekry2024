@@ -15,8 +15,8 @@ function App() {
 		}
 		return word.length;
 	}
-	const wordLength = computeWordLength(word)
-
+	//const wordLength = computeWordLength(word)
+	const wordLength = useMemo(() => computeWordLength(word),[word])
 	return (
 		<>
 			<h2>Compute the length of word:{word}</h2>
@@ -29,7 +29,7 @@ function App() {
 			<h2>Increment Counter</h2>
 			<h2>Current value:{count}</h2>
 			<button onClick={() => setCount(count => count+1)}>Increment</button>
-7		</>
+		</>
 	)
 }
 
