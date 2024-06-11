@@ -44,6 +44,42 @@ const ContactForm = (props:Props) => {
 			phone:""
 		})
 	}
+	return(
+		<div style={{"width":"40%","backgroundColor":"lightgreen","margin":"auto","textAlign":"center"}}>
+			<form onSubmit={onSubmit} className="m-3">
+				<label htmlFor="firstname" className="form-label">First Name</label>
+				<input type="text"
+						name="firstname"
+						id="firstname"
+						onChange={onChange}
+						className="form-control"
+						value={state.firstname}/>
+				<label htmlFor="lastname" className="form-label">Last Name</label>
+				<input type="text"
+						name="lastname"
+						id="lastname"
+						onChange={onChange}
+						className="form-control"
+						value={state.lastname}/>
+				<label htmlFor="email" className="form-label">Email</label>
+				<input type="email"
+						name="email"
+						id="email"
+						onChange={onChange}
+						className="form-control"
+						value={state.email}/>
+				<label htmlFor="phone" className="form-label">Phone</label>
+				<input type="tel"
+						name="phone"
+						id="phone"
+						onChange={onChange}
+						className="form-control"
+						value={state.phone}/>
+				<input type="submit" className="btn btn-secondary" value="Add"/>
+			</form>
+		</div>
+	)
+	
 }
 
 export default ContactForm;
