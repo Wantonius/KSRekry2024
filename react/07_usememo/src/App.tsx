@@ -15,7 +15,7 @@ function App() {
 		}
 		return word.length;
 	}
-	const wordLength = computeWordLength()
+	const wordLength = computeWordLength(word)
 
 	return (
 		<>
@@ -27,7 +27,7 @@ function App() {
 			}}>Next Word</button>
 			
 			<h2>Increment Counter</h2>
-			<h2>Current value:{value}</h2>
+			<h2>Current value:{count}</h2>
 			<button onClick={() => setCount(count => count+1)}>Increment</button>
 7		</>
 	)
