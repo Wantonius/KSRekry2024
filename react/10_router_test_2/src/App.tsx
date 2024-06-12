@@ -66,7 +66,7 @@ function App() {
 		<>
 			<Navbar/>
 			<Routes>
-				<Route path="/" element={<ContactList list={state.list} removeContact={removeContact}/>}/>
+				<Route path="/" element={<ContactList list={state.list} removeContact={removeContact}/>} />
 				<Route path="/form" element={<ContactForm addContact={addContact}/>} />		
 				<Route path="*" element={<Navigate to="/"/>} />
 			</Routes>
